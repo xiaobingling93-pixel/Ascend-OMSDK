@@ -1,0 +1,19 @@
+include_directories(
+  ens/base
+  common
+  fault_check
+  devm
+  certmanage
+  alarm_process
+  lpeblock
+  extend_alarm
+)
+
+add_subdirectory(common)
+add_subdirectory(certmanage)
+add_subdirectory(alarm_process)
+add_subdirectory(extend_alarm)
+add_subdirectory(fault_check)
+add_subdirectory(ens)
+add_subdirectory(devm)
+add_subdirectory(lpeblock)
