@@ -2,7 +2,7 @@
 <SoftwarePackage version="V1">
 <!--Upgrade packages description-->
     <Package>
-        <FileName>Ascend-om_3.0.RC2_linux-aarch64.zip</FileName>
+        <FileName>Ascend-mindxedge-om_3.0.RC2_linux-aarch64.zip</FileName>
         <OutterName>MindXOM</OutterName>
         <Version>3.0.RC2</Version>
         <FileType>Firmware</FileType>

@@ -27,7 +27,7 @@ function generate_2_vercfg_xml() {
     echo -e '<?xml version="1.0" encoding="utf-8"?>\n<Package>\n</Package>' > "${vercfg_xml_path}"
 
     # 计算OM驱动包sha256值，写入vercfg.xml/
-    local om_tar_gz="$(find "${package_dir}" -maxdepth 1 -type f | grep "Ascend-om.\{1,\}.tar.gz$")"
+    local om_tar_gz="$(find "${package_dir}" -maxdepth 1 -type f | grep "Ascend-mindxedge-om.\{1,\}.tar.gz$")"
     sed -i "3 i \ \t<File>\n\t\t<FilePath>$(basename "${om_tar_gz}")</FilePath>\n\t\t<SHAValue>$(sha256sum "${om_tar_gz}" | awk '{print $1}')</SHAValue>\n\t</File>" "${vercfg_xml_path}"
 
     # 计算version.xml的sha256值，写入vercfg.xml
@@ -42,13 +42,13 @@ function generate_2_vercfg_xml() {
 function make_zip_package()
 {
     #directory need to create
-    local om_tar_gz="$(find "${OUTPUT_PATH}" -maxdepth 1 -type f | grep "Ascend-om.\{1,\}.tar.gz$")"
+    local om_tar_gz="$(find "${OUTPUT_PATH}" -maxdepth 1 -type f | grep "Ascend-mindxedge-om.\{1,\}.tar.gz$")"
     local om_basename="$(basename "${om_tar_gz}" ".tar.gz")"
     local package_dir="${OUTPUT_PATH}/package"
     rm -rf "${package_dir}"
     mkdir -p "${package_dir}"
 
-    for file in $(find "${OUTPUT_PATH}" -maxdepth 1 -type f | grep "Ascend-om.\{1,\}.tar.gz"); do
+    for file in $(find "${OUTPUT_PATH}" -maxdepth 1 -type f | grep "Ascend-mindxedge-om.\{1,\}.tar.gz"); do
         mv "${file}" "${package_dir}"
     done
     mv "${OUTPUT_PATH}/version.xml" "${package_dir}"

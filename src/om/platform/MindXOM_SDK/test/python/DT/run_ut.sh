@@ -49,16 +49,16 @@ function install_om()
     fi
 
     cd ${OM_WORK_DIR}
-    unzip -od ${ROOT_PATH}/output ${ROOT_PATH}/output/Ascend-omsdk*.zip
-    cp -f ${ROOT_PATH}/output/Ascend-omsdk*.tar.gz ${OM_WORK_DIR}
+    unzip -od ${ROOT_PATH}/output ${ROOT_PATH}/output/Ascend-mindxedge-omsdk*.zip
+    cp -f ${ROOT_PATH}/output/Ascend-mindxedge-omsdk*.tar.gz ${OM_WORK_DIR}
     if (($? != 0)); then
-        echo "[ERROR]cp -rf ${ROOT_PATH}/output/Ascend-omsdk*.tar.gz ${OM_WORK_DIR} failed"
+        echo "[ERROR]cp -rf ${ROOT_PATH}/output/Ascend-mindxedge-omsdk*.tar.gz ${OM_WORK_DIR} failed"
         return 1
     fi
 
-    tar -zxvf ${OM_WORK_DIR}/Ascend-omsdk*.tar.gz >/dev/null 2>&1
+    tar -zxvf ${OM_WORK_DIR}/Ascend-mindxedge-omsdk*.tar.gz >/dev/null 2>&1
     if (($? != 0)); then
-        echo "[ERROR]tar -zxvf ${OM_WORK_DIR}/Ascend-omsdk*.tar.gz"
+        echo "[ERROR]tar -zxvf ${OM_WORK_DIR}/Ascend-mindxedge-omsdk*.tar.gz"
         return 1
     fi
 
