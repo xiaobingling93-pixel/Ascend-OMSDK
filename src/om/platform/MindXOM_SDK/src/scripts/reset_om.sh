@@ -84,9 +84,9 @@ function unpack_om_package()
     rm -rf "${OM_RESET_DIR}"
     mkdir -p "${OM_RESET_DIR}"
     if [[ "${MODE_TYPE}" == "${MODE_RESET_MINIOS}" ]]; then
-        om_package=$(find "${GOLDEN_MOUNT_DIR}/firmware" -maxdepth 1 -name "Ascend-om_*_linux-aarch64.tar.gz")
+        om_package=$(find "${GOLDEN_MOUNT_DIR}/firmware" -maxdepth 1 -name "Ascend-mindxedge-om_*_linux-aarch64.tar.gz")
     else
-        om_package=$(find "${GOLDEN_MOUNT_DIR}" -maxdepth 1 -name "Ascend-om_*_linux-aarch64.tar.gz")
+        om_package=$(find "${GOLDEN_MOUNT_DIR}" -maxdepth 1 -name "Ascend-mindxedge-om_*_linux-aarch64.tar.gz")
     fi
 
     if [[ ! -f "${om_package}" ]]; then
