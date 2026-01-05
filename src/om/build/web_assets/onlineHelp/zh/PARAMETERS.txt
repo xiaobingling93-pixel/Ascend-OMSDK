@@ -1,3 +1,0 @@
-version=""
-language="zh-cn"
-type=""

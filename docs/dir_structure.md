@@ -7,7 +7,6 @@ om-sdk				                # 项目根目录
 └── src				                # 源码目录
     ├── om				        # OM SDK 组件代码
     │   ├── build	        		# 构建子目录
-    │   │   └── web_assets			# Web资源目录
     │   ├── config		           	# 配置目录
     │   ├── doc				        # 文档目录
     │   ├── output	     		        # 输出目录
@@ -22,7 +21,6 @@ om-sdk				                # 项目根目录
         ├── build			        # 构建子目录
         ├── public			        # 公共资源
         │   ├── config			        # 配置文件
-        │   ├── onlineHelp		        # 联机帮助
         │   └── WhiteboxConfig		        # 白盒配置
         ├── src				        # 源码目录
         │   ├── api			        # API接口

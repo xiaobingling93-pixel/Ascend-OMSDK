@@ -132,7 +132,6 @@ function package_nginx_dir() {
     cp -rf "${OM_WORK_DIR}"/software/nginx "${OUTPUT_PACKAGE_DIR}"/software/
     mkdir -p "${OUTPUT_PACKAGE_DIR}"/software/nginx/html/manager
     cp -rf "${TOP_DIR}"/src/app/web/* "${OUTPUT_PACKAGE_DIR}"/software/nginx/html/manager
-    rm -rf "${OUTPUT_PACKAGE_DIR}"/software/nginx/html/manager/onlinehelp
     # 拷贝python公共代码
     mkdir -p "${OUTPUT_PACKAGE_DIR}"/software/nginx/python
     cp -rf "${TOP_DIR}"/src/app/sys/common "${OUTPUT_PACKAGE_DIR}"/software/nginx/python

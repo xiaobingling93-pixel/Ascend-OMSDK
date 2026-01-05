@@ -23,7 +23,6 @@
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-      <online-help-icon />
     </span>
   </el-menu>
 </template>
@@ -33,7 +32,6 @@ import { useRoute, useRouter } from 'vue-router';
 import { ref, watch, defineComponent, onMounted, onUnmounted } from 'vue';
 
 import AppLanguageSwitch from '@/components/AppLanguageSwitch.vue';
-import OnlineHelpIcon from '@/components/OnlineHelpIcon.vue';
 import { querySessionService } from '@/api/account';
 import constants from '@/utils/constants';
 import { deleteSession } from '@/api/account';
@@ -43,7 +41,6 @@ import { getLanguageDefaultChinese, clearSessionStorage } from '@/utils/commonMe
 export default defineComponent({
   components: {
     AppLanguageSwitch,
-    OnlineHelpIcon,
   },
   setup() {
     const router = useRouter();
