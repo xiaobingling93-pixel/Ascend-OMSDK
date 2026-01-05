@@ -125,7 +125,6 @@ function integrate_version_xml() {
 
 function integrate_web() {
     cp -rf "${TMP_UNPACK_DIR}"/web_assets/WhiteboxConfig/* "${OM_UNPACK_PATH}"/software/nginx/html/manager/WhiteboxConfig
-    cp -rf "${TMP_UNPACK_DIR}"/web_assets/onlineHelp/* "${OM_UNPACK_PATH}"/software/nginx/html/manager/onlineHelp
 }
 
 function remove_not_support_components()

@@ -1,3 +1,0 @@
-version=""
-language="en-us"
-type=""
