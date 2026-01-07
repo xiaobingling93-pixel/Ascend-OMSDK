@@ -16,7 +16,11 @@ TOP_DIR=$CUR_DIR/..
 # 回到项目根目录
 cd "$TOP_DIR"
 
-# 安装依赖
+# 安装依赖，默认使用华为云NPM镜像
+if [ "$NPM_REGISTRY_MIRROR" == "" ]; then
+    NPM_REGISTRY_MIRROR=https://repo.huaweicloud.com/repository/npm
+fi
+sed -i -r "s#\"resolved\": \"([^\"@]+)/((@[^/]+/)?[^/]+/-/[^/]+\")#\"resolved\": \"$NPM_REGISTRY_MIRROR/\2#g"  "$TOP_DIR"/package-lock.json
 npm ci
 
 # 构建
