@@ -55,10 +55,7 @@ function build_prepare()
 
     cp -rf ${TOP_DIR}/opensource/libboundscheck/include/* ${TOP_DIR}/test/C++/output
     cp -rf ${TOP_DIR}/opensource/googletest/googletest/include/* ${TOP_DIR}/test/C++/output
-    mkdir -p ${TOP_DIR}/test/C++/output/crypto/rsa/
-    cp -f ${TOP_DIR}/opensource/openssl/crypto/rsa/rsa_local.h "${TOP_DIR}"/test/C++/output/crypto/rsa/
-    mkdir -p ${TOP_DIR}/test/C++/output/crypto/evp/
-    cp -f "${TOP_DIR}"/opensource/openssl/crypto/evp/evp_local.h "${TOP_DIR}"/test/C++/output/crypto/evp/
+    cp -rf "${TOP_DIR}"/opensource/openssl/include/* "${TOP_DIR}"/test/C++/output/
 
     cp -rf ${TOP_DIR}/test/install/lib/libcrypto.so* ${TOP_DIR}/test/C++/lib/
     cp -rf ${TOP_DIR}/test/install/lib/libssl.so* ${TOP_DIR}/test/C++/lib/
