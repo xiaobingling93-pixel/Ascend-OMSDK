@@ -20,26 +20,33 @@
 
 ## 最新消息
 
-- [2025.12.30]：版本发布
+- [2025.12.30]：🚀 OM SDK开源发布
 
 ## 简介
 
 OM SDK作为开发态组件，使能第三方合作伙伴基于昇腾AI处理器快速搭建智能边缘硬件管理平台，自定义构建设备运维系统，简化设备运维部署。
 
+<div align="center">
+
+[![Zread](https://img.shields.io/badge/Zread-Ask_AI-_.svg?style=flat&color=0052D9&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/Ascend/OMSDK)&nbsp;&nbsp;&nbsp;&nbsp;
+[![DeepWiki](https://img.shields.io/badge/DeepWiki-Ask_AI-_.svg?style=flat&color=0052D9&labelColor=000000&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==)](https://deepwiki.com/Ascend/OMSDK)
+
+</div>
+
 ## 目录结构
 
-关键目录如下，详细目录介绍参见[项目目录](docs/dir_structure.md)。
+关键目录如下，详细目录介绍参见[项目目录](docs/zh/dir_structure.md)。
 
-    om-sdk					        # 项目根目录
-    ├── build				        # 构建相关目录
-    ├── docs				        # 文档目录
-    │   └── images				        # 图片目录
-    └── src				                # 源码目录
-        ├── om			                # OM SDK 组件代码
-        └── om-web					# OM Web 前端组件代码
+    om-sdk                    # 项目根目录
+    ├── build                 # 构建相关目录
+    ├── docs                  # 文档目录
+    │   └── zh                # 中文文档目录
+    └── src                   # 源码目录
+        ├── om                # OM SDK 组件代码
+        └── om-web            # OM Web 前端组件代码
 
 ## 版本说明
-OM SDK版本配套详情请参考：[版本配套说明](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/releasenote/edgereleasenote_0002.html)。
+OM SDK版本配套详情请参考：[版本配套说明](docs/zh/release_notes.md#版本配套说明)。
 
 ## 兼容性信息
 
@@ -60,7 +67,7 @@ OM SDK版本配套详情请参考：[版本配套说明](https://www.hiascend.co
 
 ## 环境部署
 
-在安装和使用前，用户需要了解安装须知、环境准备，具体内容请参考昇腾社区《OM SDK使用》文档，"[安装部署](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkug/omsdkag_0004.html)"章节。
+在安装和使用前，用户需要了解安装须知、环境准备，具体内容请参考"[安装部署](docs/zh/user_guide/installation_guide.md#安装部署)"章节文档。
 
 - 获取软件包
 - 准备安装环境
@@ -139,7 +146,7 @@ OM SDK构建仅支持ARM64 CPU。
 
 ## 快速入门
 
-安装OM SDK后，可登录边缘管理系统进行基础操作、系统管理和数据配置。具体内容请参考昇腾社区《OM SDK使用》文档，"[新手入门](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkug/help_003.html)"章节。
+安装OM SDK后，可登录边缘管理系统进行基础操作、系统管理和数据配置。具体内容请参考"[新手入门](docs/zh/user_guide/usage.md#新手入门)"章节文档。
 
 - 用户登录
 - 基础操作
@@ -149,7 +156,7 @@ OM SDK构建仅支持ARM64 CPU。
 
 ## 功能介绍
 
-边缘管理系统支持对边缘设备进行初始化配置、硬件监测、软件安装、系统运维等功能；同时还支持与SmartKit软件、华为FusionDirector管理软件对接，实现集中式运维管理。具体内容请参考昇腾社区《OM SDK使用》文档，"[Web功能介绍](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkug/help_001.html)"章节。
+边缘管理系统支持对边缘设备进行初始化配置、硬件监测、软件安装、系统运维等功能；同时还支持与SmartKit软件、华为FusionDirector管理软件对接，实现集中式运维管理。具体内容请参考"[Web功能介绍](docs/zh/user_guide/usage.md#Web功能介绍)"章节文档。
 
 表4 边缘管理系统功能介绍
 
@@ -166,15 +173,15 @@ OM SDK构建仅支持ARM64 CPU。
 
 ## API参考
 
-API请参考"[RESTful接口](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkdg/omsdk_api01_0001.html)"和"[云边协同接口](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkdg/omsdk_api02_0002.html)"。
+API请参考"[RESTful接口](docs/zh/secondary_development/api/api1.md#RESTful接口)"和"[云边协同接口](docs/zh/secondary_development/api/api2.md#云边协同接口)"。
 
 ## 安全声明
 
-- 请参考[安全配置和加固](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkug/omsdkag_0019.html)对系统进行安全加固。
+- 请参考[安全配置和加固](docs/zh/user_guide/security_hardening.md#安全配置和加固)对系统进行安全加固。
 - 安全加固建议中的安全加固措施为基本的加固建议项。用户应根据自身业务，重新审视整个系统的网络安全加固措施。
 - 外部下载的软件代码或程序可能存在风险，功能的安全性需由用户保证。
-- 公网地址详见：[公网地址](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkug/omsdkag_0035.html)
-- 用户信息列表详见：[用户信息列表](https://www.hiascend.com/document/detail/zh/mindedge/72rc1/omsdk/omsdkug/omsdkag_0036.html)
+- 公网地址详见：[公网地址](docs/zh/user_guide/appendix.md#公网地址)
+- 用户信息列表详见：[用户信息列表](docs/zh/user_guide/appendix.md#用户信息列表)
 
 
 ## 分支维护策略
@@ -190,9 +197,9 @@ API请参考"[RESTful接口](https://www.hiascend.com/document/detail/zh/mindedg
 
 ## 版本维护策略
 
-| 版本       | 维护策略 | 当前状态 | 发布日期       | 后续状态                 | EOL日期      |
-|----------|------|------|------------|----------------------|------------|
-| master   | 长期支持 | 开发   | 在研分支，不发布   | 2025-10-27           | -          |
+| 版本       | 维护策略 | 当前状态 | 发布日期       | 后续状态 | EOL日期      |
+|----------|------|------|------------|------|------------|
+| master   | 长期支持 | 开发   | 在研分支，不发布   | -    | -          |
 
 ## 免责声明
 
