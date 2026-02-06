@@ -105,22 +105,22 @@ OM SDK构建仅支持ARM64 CPU。
 
 本节以ubuntu22.04系统为例，介绍如何通过源码编译生成OM软件包。
 
-执行OM SDK编译前，请保证环境上安装了必要编译工具和依赖库，参考安装命令如下：
+执行OM SDK编译前，请保证环境上安装了必要编译工具和依赖库，参考安装命令如下： 
 
-    ```shell
-    apt-get update && apt-get upgrade -y
-    apt-get install -y python3 python3-pip build-essential zip unzip dos2unix git cmake autoconf automake libtool curl
+```shell
+apt-get update && apt-get upgrade -y
+apt-get install -y python3 python3-pip build-essential zip unzip dos2unix git cmake autoconf automake libtool curl
 
-    # 由于ubuntu 22.04默认的node.js版本过低，需要手动下载安装
-    # 使用国内镜像下载node.js
-    NODE_MIRROR_URL=https://mirrors.huaweicloud.com/nodejs
-    # 编译OM SDK要求node.js版本最低为16.0
-    NODE_VERSION=v16.20.2
-    NODE_INSTALL_DIR=/usr/local/lib/nodejs
-    mkdir -p $NODE_INSTALL_DIR
-    curl -sSL $NODE_MIRROR_URL/$NODE_VERSION/node-$NODE_VERSION-linux-arm64.tar.gz | tar -zxvf - -C $NODE_INSTALL_DIR
-    find $NODE_INSTALL_DIR/node-$NODE_VERSION-linux-arm64/bin -mindepth 1 -exec sh -c 'ln -s {} /usr/bin/$(basename {})' \;
-    ```
+# 由于ubuntu 22.04默认的node.js版本过低，需要手动下载安装
+# 使用国内镜像下载node.js
+NODE_MIRROR_URL=https://mirrors.huaweicloud.com/nodejs
+# 编译OM SDK要求node.js版本最低为16.0
+NODE_VERSION=v16.20.2
+NODE_INSTALL_DIR=/usr/local/lib/nodejs
+mkdir -p $NODE_INSTALL_DIR
+curl -sSL $NODE_MIRROR_URL/$NODE_VERSION/node-$NODE_VERSION-linux-arm64.tar.gz | tar -zxvf - -C $NODE_INSTALL_DIR
+find $NODE_INSTALL_DIR/node-$NODE_VERSION-linux-arm64/bin -mindepth 1 -exec sh -c 'ln -s {} /usr/bin/$(basename {})' \;
+```
 
 ### 编译
 
