@@ -50,7 +50,7 @@
 
 ## 模组规格配置文件样例<a id="模组规格配置文件样例"></a>
 
-模组规格配置文件需要开发者在_\{project\_dir\}_/config/module\_def目录下新建module\_demo.json文件。
+模组规格配置文件需要开发者在<i>{project_dir}</i>/config/module\_def目录下新建module\_demo.json文件。
 
 ```json
 {

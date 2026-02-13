@@ -23,19 +23,19 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
 
 **依赖工具<a name="section143281824192813"></a>**
 
-在进行安装软件之前，需要参考[表1](#安装工具)完成安装前准备。
+在进行安装软件之前，需要参考[表1 安装工具](#安装工具)完成安装前准备。
 
 **表 1**  安装工具<a id="安装工具"></a>
 
 |依赖|说明|安装命令或步骤|
 |--|--|--|
 |net-tools|配置管理网络功能的工具。|执行以下命令，安装net-tools。<li>openEuler<ul>`dnf install ethtool -y`</ul></li><li>Ubuntu<ul>`apt-get install net-tools -y`</ul></li>|
-|ntp|一种基于NTP协议的服务器，能够在分布式时间服务器和客户端之间进行时间同步，使网络中的计算机时间都与国际标准时间（UTC）同步。|执行以下命令，安装ntp。openEulerdnf install ntp -yUbuntuapt-get install ntp -y|
+|ntp|一种基于NTP协议的服务器，能够在分布式时间服务器和客户端之间进行时间同步，使网络中的计算机时间都与国际标准时间（UTC）同步。|执行以下命令，安装ntp。<li>openEuler<ul>`dnf install ntp -y`</ul></li><li>Ubuntu<ul>`apt-get install ntp -y`</ul></li>|
 |smartmontools|开源的磁盘控制，监测工具。|执行以下命令，安装smartmontools。<li>openEuler<ul>`dnf install smartmontools -y`</ul></li><li>Ubuntu<ul>`apt-get install smartmontools -y`</ul></li>|
 |nfs|网络文件系统，允许网络中的计算机之间共享资源。|执行以下命令，安装nfs。<li>openEuler<ul>`dnf install nfs-utils -y`</ul></li><li>Ubuntu<ul>`apt-get install nfs-common -y`</ul></li>|
-|ethtool|查询及设置网卡参数的时候需要用到的命令。|执行以下命令，安装ethtool。openEulerdnf install ethtool -yUbuntuapt-get install ethtool -y|
+|ethtool|查询及设置网卡参数的时候需要用到的命令。|执行以下命令，安装ethtool。<li>openEuler<ul>`dnf install ethtool -y`</ul></li><li>Ubuntu<ul>`apt-get install ethtool -y`</ul></li>|
 |parted|硬盘分区或调整分区大小的工具。|执行以下命令，安装parted。<li>openEuler<ul>`dnf install parted -y`</ul></li><li>Ubuntu<ul>`apt-get install parted -y`</ul></li>|
-|arping|用于发送ARP请求报文。|执行以下命令，安装arping。<li><ul>`openEulerdnf install arping -y`</ul></li><li>Ubuntu<ul>`apt-get install arping -y`</ul></li><br> > [!NOTE] 说明<br>用户需要确保安装的arping的版本在2.19以上。|
+|arping|用于发送ARP请求报文。|执行以下命令，安装arping。<li>openEuler<ul>`dnf install arping -y`</ul></li><li>Ubuntu<ul>`apt-get install arping -y`</ul></li><br> > [!NOTE] 说明<br>用户需要确保安装的arping的版本在2.19以上。|
 |inotify-tools|用于监测文件系统事件的工具集，它可以在文件或目录发生变化时自动执行指定的命令或脚本。|执行以下命令，安装inotify-tools。<li>openEuler<ul>`dnf install inotify-tools -y`</ul></li><li>Ubuntu<ul>`apt-get install inotify-tools -y`</ul></li>|
 
 ## 通过命令行安装<a id="ZH-CN_TOPIC_0000001582431578"></a>
@@ -48,7 +48,7 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
 
 **通过命令行安装<a name="section7621141414618"></a>**
 
-1. 将软件包上传到环境任意目录下（如“/home“）。
+1. 将软件包上传到环境任意目录下（如“/home”）。
 2. 在软件包目录下，执行以下命令，创建临时目录om\_install。
 
     ```bash
@@ -118,7 +118,7 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
 
 1. 检查软件版本。
 
-    登录边缘管理系统的Web界面，在主菜单中选择“管理 \> 系统信息“，查看当前固件版本。
+    登录边缘管理系统的Web界面，在主菜单中选择“管理 \> 系统信息”，查看当前固件版本。
 
 2. 检查有线网络中的IP用途。
     - 有线网络中存在“web”用途的IP，可直接升级。
@@ -140,7 +140,7 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
 
 **升级后检查<a name="section1092321532713"></a>**
 
-登录边缘管理系统的Web界面，在主菜单中选择“管理 \> 系统信息“，查看当前固件版本是否为升级后版本。
+登录边缘管理系统的Web界面，在主菜单中选择“管理 \> 系统信息”，查看当前固件版本是否为升级后版本。
 
 ### 通过FusionDirector升级<a name="ZH-CN_TOPIC_0000001584618736"></a>
 
@@ -152,14 +152,14 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
 
 **操作步骤<a name="section169701747193914"></a>**
 
-整体升级的操作指导请参见《[FusionDirector 操作指南](https://support.huawei.com/enterprise/zh/doc/EDOC1100255640/c1ec64a5)》中的“升级管理 \> 固件/驱动升级”章节。
+整体升级的操作指导请参见《[FusionDirector 操作指南](https://support.huawei.com/enterprise/zh/doc/EDOC1100317179/426cffd9?idPath=23710424|251364417|251364851|252309137|23015464)》中的“升级管理 \> 固件/驱动升级”章节。
 
 > [!NOTE] 说明  
 > 通过FusionDirector升级固件的流程中包含固件包的下载。固件包的下载支持断点续传功能，即下载过程中如果出现网络中断或异常，会导致下载失败。如果用户再次执行升级操作，则固件包会从上次下载失败的位置继续下载，无需重新完整的下载，节省下载时间。
 
 **升级后检查<a name="section1092321532713"></a>**
 
-登录边缘管理系统的Web界面，在主菜单中选择“管理 \> 系统信息“，查看当前固件版本是否为升级后版本。
+登录边缘管理系统的Web界面，在主菜单中选择“管理 \> 系统信息”，查看当前固件版本是否为升级后版本。
 
 # 卸载<a id="ZH-CN_TOPIC_0000001628849833"></a>
 
@@ -190,5 +190,5 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
     ```
 
     > [!NOTE] 说明  
-    > 卸载运行日志可以通过**tail -f /var/plog/upgrade.log**查看。
+    > 卸载运行日志可以通过**tail -f /var/plog/upgrade.log**查看。  
     > uninstall.sh命令说明请参见[uninstall.sh命令](./appendix.md#uninstallsh命令)。
