@@ -6,7 +6,7 @@
 
 ### 上行消息接口格式<a id="上行消息接口格式"></a>
 
-MindEdge OM向中心网管发送的消息格式定义如下：
+OM向中心网管发送的消息格式定义如下：
 
 ```json
 {
@@ -57,7 +57,7 @@ MindEdge OM向中心网管发送的消息格式定义如下：
 
 ### 下行消息接口格式<a name="ZH-CN_TOPIC_0000001577530692"></a>
 
-中心网管下发到MindEdge OM SDK的消息格式定义如下：
+中心网管下发到OM SDK的消息格式定义如下：
 
 ```json
 {
@@ -84,7 +84,7 @@ MindEdge OM向中心网管发送的消息格式定义如下：
 
 ### 注册认证信息<a name="ZH-CN_TOPIC_0000001628490493"></a>
 
-MindEdge OM向FusionDirector注册认证，携带账号、密码、产品名称、产品序列号、自定义资产标签，新增产品类型，用于区分产品是否支持BMC，是否为服务器形态。
+OM向FusionDirector注册认证，携带账号、密码、产品名称、产品序列号、自定义资产标签，新增产品类型，用于区分产品是否支持BMC，是否为服务器形态。
 
 消息头定义如下：
 
@@ -1824,9 +1824,9 @@ content消息内容描述如下：
 
 **QoS保障属性<a name="section17448725131619"></a>**
 
-为保障MindEdge OM的正常使用，避免出现卡顿或者上传、下载任务过慢的问题，网络带宽必须满足基本要求，推荐值如下：
+为保障OM的正常使用，避免出现卡顿或者上传、下载任务过慢的问题，网络带宽必须满足基本要求，推荐值如下：
 
-- MindEdge OM所在边缘设备与FusionDirector之间的带宽 ≥ 50Mbit/s
+- OM所在边缘设备与FusionDirector之间的带宽 ≥ 50Mbit/s
 - 其他网络要求：时延 < 30ms，丢包率 < 3%
 
 ### 上报系统状态信息<a name="ZH-CN_TOPIC_0000001628610497"></a>
@@ -3136,7 +3136,7 @@ content消息内容描述如下:
 
 ### 上报keepalive信息<a name="ZH-CN_TOPIC_0000001578489828"></a>
 
-MindEdge OM会按照heartbeat参数设置的时间间隔（默认时间间隔为15秒），定时上报一次keepalive信息，确保设备在线。
+OM会按照heartbeat参数设置的时间间隔（默认时间间隔为15秒），定时上报一次keepalive信息，确保设备在线。
 
 **消息实例**
 
@@ -3160,7 +3160,7 @@ MindEdge OM会按照heartbeat参数设置的时间间隔（默认时间间隔为
 
 ### 上报heartbeat信息<a name="ZH-CN_TOPIC_0000001628729909"></a>
 
-MindEdge OM除了以上的keepalive信息外，使用的websocket协议还存在默认的ping、pong心跳帧机制，客户端会定期发送帧首部Opcode值为9的控制帧，服务端在收到此消息后会回复帧首部Opcode值为A的控制帧，用于判断连接是否正常。消息的payload数据是4字节随机数据，用于判断ping、pong消息是否配对。
+OM除了以上的keepalive信息外，使用的websocket协议还存在默认的ping、pong心跳帧机制，客户端会定期发送帧首部Opcode值为9的控制帧，服务端在收到此消息后会回复帧首部Opcode值为A的控制帧，用于判断连接是否正常。消息的payload数据是4字节随机数据，用于判断ping、pong消息是否配对。
 
 **消息示例**
 
@@ -3180,7 +3180,7 @@ MindEdge OM除了以上的keepalive信息外，使用的websocket协议还存在
 
 ### 上报对接FusionDirector根证书信息<a name="ZH-CN_TOPIC_0000001628849861"></a>
 
-对接FusionDirector根证书信息需由FusionDirector侧主动发起查询，MindEdge OM响应查询消息，在响应报文中携带FusionDirector根证书信息。
+对接FusionDirector根证书信息需由FusionDirector侧主动发起查询，OM响应查询消息，在响应报文中携带FusionDirector根证书信息。
 
 **消息实例**
 
@@ -3411,7 +3411,7 @@ content消息内容描述如下:
 
 ## 下行消息接口<a name="ZH-CN_TOPIC_0000001577530676"></a>
 
-MindEdge OM接收从FusionDirector下发的配置信息并进行处理，部分接口会通过异步消息，通过上行消息通知FusionDirector配置结果。
+OM接收从FusionDirector下发的配置信息并进行处理，部分接口会通过异步消息，通过上行消息通知FusionDirector配置结果。
 
 ### 配置导入<a name="ZH-CN_TOPIC_0000001578489776"></a>
 
@@ -3430,7 +3430,7 @@ partitions具体配置规则如下：
 3. file\_system只能支持ext4，其它格式不支持。
 4. mount\_path为分区挂载路径。该字段不能为空，如果为空，创建的分区无挂载路径，会导致无法正常使用。
 5. 配置过程中出现失败，已经完成的配置不回滚，结果返回失败。
-6. “/var/lib/docker“路径不允许删除，允许重新挂载；如果本次分区挂载路径不包含“/var/lib/docker“，不管本次是否要对“/var/lib/docker“所挂载的设备进行分区，“/var/lib/docker“挂载的分区都保留；反之，如果本次重新挂载“/var/lib/docker“，不管是否对“/var/lib/docker“原来挂载的设备进行分区，都会删除该分区。
+6. “/var/lib/docker”路径不允许删除，允许重新挂载；如果本次分区挂载路径不包含“/var/lib/docker”，不管本次是否要对“/var/lib/docker”所挂载的设备进行分区，“/var/lib/docker”挂载的分区都保留；反之，如果本次重新挂载“/var/lib/docker”，不管是否对“/var/lib/docker”原来挂载的设备进行分区，都会删除该分区。
 
 **消息实例**
 
@@ -3541,7 +3541,7 @@ content消息内容描述如下:
 </td>
 <td class="cellrowborder" valign="top" width="36.986301369863014%" headers="mcps1.1.6.1.5 "><p id="zh-cn_topic_0000001396761838_p30891081"><a name="zh-cn_topic_0000001396761838_p30891081"></a><a name="zh-cn_topic_0000001396761838_p30891081"></a>含义：产品名称</p>
 <p id="zh-cn_topic_0000001396761838_p53314289202"><a name="zh-cn_topic_0000001396761838_p53314289202"></a><a name="zh-cn_topic_0000001396761838_p53314289202"></a>类型：string</p>
-<p id="zh-cn_topic_0000001396761838_p1044482492118"><a name="zh-cn_topic_0000001396761838_p1044482492118"></a><a name="zh-cn_topic_0000001396761838_p1044482492118"></a>取值：1~64字节，支持数字、大小写字母、-、.、_和空格，不能包含“..“，且必须以数字或字母开头和结尾</p>
+<p id="zh-cn_topic_0000001396761838_p1044482492118"><a name="zh-cn_topic_0000001396761838_p1044482492118"></a><a name="zh-cn_topic_0000001396761838_p1044482492118"></a>取值：1~64字节，支持数字、大小写字母、-、.、_和空格，不能包含“..”，且必须以数字或字母开头和结尾</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001396761838_row1444760"><td class="cellrowborder" valign="top" width="18.4981501849815%" headers="mcps1.1.6.1.1 "><p id="zh-cn_topic_0000001396761838_p49916750"><a name="zh-cn_topic_0000001396761838_p49916750"></a><a name="zh-cn_topic_0000001396761838_p49916750"></a>profile_name</p>
@@ -4420,7 +4420,7 @@ content消息内容描述如下:
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.1.5.1.4 "><p id="zh-cn_topic_0000001396761846_p745915559362"><a name="zh-cn_topic_0000001396761846_p745915559362"></a><a name="zh-cn_topic_0000001396761846_p745915559362"></a>含义：用户名称</p>
 <p id="zh-cn_topic_0000001396761846_p176403228192"><a name="zh-cn_topic_0000001396761846_p176403228192"></a><a name="zh-cn_topic_0000001396761846_p176403228192"></a>类型：string</p>
-<p id="p17591181119276"><a name="p17591181119276"></a><a name="p17591181119276"></a>取值：1~64字节，仅支持“a-zA-Z0-9-_“</p>
+<p id="p17591181119276"><a name="p17591181119276"></a><a name="p17591181119276"></a>取值：1~64字节，仅支持“a-zA-Z0-9-_”</p>
 <p id="zh-cn_topic_0000001396761846_p3640522191919"><a name="zh-cn_topic_0000001396761846_p3640522191919"></a><a name="zh-cn_topic_0000001396761846_p3640522191919"></a>从FusionDirector下载文件时使用的账号，详细信息请参考<span id="ph95490235553"><a name="ph95490235553"></a><a name="ph95490235553"></a>《<a href="https://support.huawei.com/enterprise/zh/doc/EDOC1100316872/426cffd9?idPath=23710424|251364417|251364851|252309137|23015464" target="_blank" rel="noopener noreferrer">FusionDirector 维护指南</a>》</span></p>
 </td>
 </tr>
@@ -4613,7 +4613,7 @@ content消息内容描述如下:
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.1.6.1.4 "><p id="zh-cn_topic_0000001447161509_p37006214"><a name="zh-cn_topic_0000001447161509_p37006214"></a><a name="zh-cn_topic_0000001447161509_p37006214"></a>string</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.1.6.1.5 "><p id="zh-cn_topic_0000001447161509_p8525123101816"><a name="zh-cn_topic_0000001447161509_p8525123101816"></a><a name="zh-cn_topic_0000001447161509_p8525123101816"></a>当前只支持all类型，包含NPU、操作系统驱动、<span id="ph10430464338"><a name="ph10430464338"></a><a name="ph10430464338"></a>MindEdge OM</span>日志</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.1.6.1.5 "><p id="zh-cn_topic_0000001447161509_p8525123101816"><a name="zh-cn_topic_0000001447161509_p8525123101816"></a><a name="zh-cn_topic_0000001447161509_p8525123101816"></a>当前只支持all类型，包含NPU、操作系统驱动、<span id="ph10430464338"><a name="ph10430464338"></a><a name="ph10430464338"></a>OM</span>日志</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001447161509_row1964735418125"><td class="cellrowborder" rowspan="3" valign="top" width="15%" headers="mcps1.1.6.1.1 "><p id="zh-cn_topic_0000001447161509_p19360517181317"><a name="zh-cn_topic_0000001447161509_p19360517181317"></a><a name="zh-cn_topic_0000001447161509_p19360517181317"></a>https_server</p>
@@ -4785,8 +4785,12 @@ content消息内容描述如下:
     "content": {
     }
 }
-参数说明
-content消息内容描述如下:
+```
+
+**参数说明**
+
+content消息内容描述如下:  
+```json
 {
      "account": account,
      "new_password": new_password
@@ -4797,7 +4801,7 @@ content消息内容描述如下:
 
 |一级资源|描述|类型|取值范围|
 |--|--|--|--|
-|account|用户名|string|取值范围：admin执行该功能会重置设备Web登录账号密码，详细参考《FusionDirector 操作指南》。|
+|account|用户名|string|取值范围：admin执行该功能会重置设备Web登录账号密码，详细参考[《FusionDirector 操作指南》](https://support.huawei.com/enterprise/zh/doc/EDOC1100317179/426cffd9?idPath=23710424\|251364417\|251364851\|252309137\|23015464)。|
 |new_password|新修改密码|string|长度为8~20的字符串。<li>如果其他接口启用了密码复杂度检查功能，则设置和修改的密码必须遵循密码复杂度的规则。</li><li>如果其他接口未启用密码复杂度检查功能，则设置和修改的密码可以为任意字符。</li>|
 
 ```json
@@ -5526,7 +5530,7 @@ content消息内容描述如下:
 </tr>
 <tr id="zh-cn_topic_0000001396761802_row26269302"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0000001396761802_p17333423"><a name="zh-cn_topic_0000001396761802_p17333423"></a><a name="zh-cn_topic_0000001396761802_p17333423"></a>602</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0000001396761802_p61830038"><a name="zh-cn_topic_0000001396761802_p61830038"></a><a name="zh-cn_topic_0000001396761802_p61830038"></a>输入参数存在”/”或者“.”等非法字符</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0000001396761802_p61830038"><a name="zh-cn_topic_0000001396761802_p61830038"></a><a name="zh-cn_topic_0000001396761802_p61830038"></a>输入参数存在“/”或者“.”等非法字符</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001396761802_row19599437"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="zh-cn_topic_0000001396761802_p11326743"><a name="zh-cn_topic_0000001396761802_p11326743"></a><a name="zh-cn_topic_0000001396761802_p11326743"></a>603</p>

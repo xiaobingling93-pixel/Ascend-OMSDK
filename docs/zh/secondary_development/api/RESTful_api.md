@@ -821,7 +821,7 @@ X-Auth-Token: auth_value
 
 |参数名|是否必选|参数说明|取值|
 |--|--|--|--|
-|<module_id>|必选|模组名称。|匹配任何由字母、数字、空格、减号（-）或下划线组成的字符串，长度1~127。该参数根据第三方扩展而来，当前OM SDK无具体可访问模组名称。|
+|<module_id>|必选|模组名称。|匹配任何由字母、数字、空格、减号（-）或下划线组成的字符串，长度1~127。<br>该参数根据第三方扩展而来，当前OM SDK无具体可访问模组名称。|
 
 **使用指南<a name="section18372260715"></a>**
 
@@ -1227,9 +1227,6 @@ X-Auth-Token: auth_value
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -1237,9 +1234,7 @@ Content-Type: header_type
 
 ```json
 {
-
     "ImageURI": filename,
-
     "TransferProtocol": protocol
 }
 ```
@@ -1269,9 +1264,6 @@ POST https://10.10.10.10/redfish/v1/UpdateService/Actions/UpdateService.SimpleUp
 
 ```http
 X-Auth-Token: auth_value 
-```
-
-```http
 Content-Type: application/json
 ```
 
@@ -1410,12 +1402,12 @@ X-Auth-Token: auth_value
 
 **命令功能<a name="zh-cn_topic_0000001396921746_zh-cn_topic_0000001129668041_zh-cn_topic_0178823228_section58703041"></a>**
 
-通过接口进行文件上传，上传成功后文件被统一放在“/run/web“目录下。
+通过接口进行文件上传，上传成功后文件被统一放在“/run/web”目录下。
 
-- zip文件放在“/run/web/zip“目录下。
-- crl，cer，crt文件放在“/run/web/cert“目录下。
-- conf文件放在“/run/web/conf“目录下。
-- ini文件放在“/run/web/ini“目录下。
+- zip文件放在“/run/web/zip”目录下。
+- crl，cer，crt文件放在“/run/web/cert”目录下。
+- conf文件放在“/run/web/conf”目录下。
+- ini文件放在“/run/web/ini”目录下。
 
 **命令格式<a name="zh-cn_topic_0000001396921746_zh-cn_topic_0000001129668041_zh-cn_topic_0178823228_section58565325"></a>**
 
@@ -1604,9 +1596,6 @@ X-Auth-Token: auth_value
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -1642,9 +1631,6 @@ POST https://10.10.10.10//redfish/v1/Systems/LogServices/Actions/download
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 header_type: application/json
 ```
 
@@ -1752,9 +1738,6 @@ X-Auth-Token: auth_value
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -1790,9 +1773,6 @@ POST https://10.10.10.10/redfish/v1/UpdateService/Actions/UpdateService.Reset
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 header_type: application/json
 ```
 
@@ -1835,7 +1815,7 @@ header_type: application/json
 |@odata.id|字符串|当前任务资源的访问路径。<br> [!NOTE] 说明</br>您可以访问该资源，获取该任务的详细信息。|
 |Id|字符串|升级任务资源的ID。|
 |Name|字符串|硬盘资源集合的名称。|
-|TaskState|字符串|升级任务资源的状态。NewSuccessRunningFailed|
+|TaskState|字符串|升级任务资源的状态。<li>New</li><li>Success</li><li>Running</li><li>Failed</li>|
 |StartTime|字符串|升级任务的起始时间。|
 |Messages|对象|升级任务的相关信息。|
 |PercentComplete|数字|升级进度。|
@@ -2390,9 +2370,9 @@ X-Auth-Token: auth_value
 |参数名|是否必选|参数说明|取值|
 |--|--|--|--|
 |apn_name|必选|无线网络拨号时使用的APN名称，不允许为空。|字符串，可由大小写字母（a~z、A~Z）、数字（0~9）和其他字符（_-.@）组成，最大长度为39字符。|
-|apn_user|可选|无线网络拨号时使用的APN用户名，允许为空。apn_user和apn_passwd字段要么都为空，要么都不为空。请根据运营商提供的实际信息进行配置。|字符串。最大长度为64字符，可由大小写字母（a~z、A~Z）、数字（0~9）和其他字符（-_.@）组成。|
-|apn_passwd|可选|无线网络拨号时使用的APN密码，允许为空。apn_user和apn_passwd字段要么都为空，要么都不为空。请根据运营商提供的实际信息进行配置。|字符串。长度为1~64个字符，由数字、大小写字母及英文特殊符号~`!?, .:;-_'"(){}[]/<>@#^&$%*+|\=空格组成。|
-|auth_type|必选|身份验证类型。|字符串取值为0、1、2、3，其含义分别为：<li>0：NONE</li><li>1：PAP</li><li>2：CHAP</li><li>3：PAP or CHAP</li> [!NOTE] 说明<br>4G模块支持的auth_type取值为0、1、2；5G模块支持的auth_type的取值为0、1、2、3。</br>|
+|apn_user|可选|无线网络拨号时使用的APN用户名，允许为空。apn_user和apn_passwd字段必须同时为空或者同时不为空。请根据运营商提供的实际信息进行配置。|字符串。最大长度为64字符，可由大小写字母（a~z、A~Z）、数字（0~9）和其他字符（-_.@）组成。|
+|apn_passwd|可选|无线网络拨号时使用的APN密码，允许为空。apn_user和apn_passwd字段必须同时为空或者同时不为空。请根据运营商提供的实际信息进行配置。|字符串。长度为1~64个字符，由数字、大小写字母及英文特殊符号~`!?, .:;-_'"(){}[]/<>@#^&$%*+\|\\=空格组成。|
+|auth_type|必选|身份验证类型。|字符串。取值为0、1、2、3，其含义分别为：<li>0：NONE</li><li>1：PAP</li><li>2：CHAP</li><li>3：PAP or CHAP</li> [!NOTE] 说明<br>4G模块支持的auth_type取值为0、1、2；5G模块支持的auth_type的取值为0、1、2、3。</br>|
 
 **使用指南<a name="zh-cn_topic_0000001447281845_zh-cn_topic_0000001082606160_zh-cn_topic_0208776520_zh-cn_topic_0200634535_section36430550"></a>**
 
@@ -2699,9 +2679,6 @@ X-Auth-Token: auth_value
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -2762,9 +2739,6 @@ PATCH https://10.10.10.10/redfish/v1/Systems/EthernetInterfaces/GMAC0
 
 ```http
 X-Auth-Token: auth_value 
-```
-
-```http
 Content-Type: application/json
 ```
 
@@ -4173,10 +4147,8 @@ X-Auth-Token: auth_value
 
 ```json
 {
-
     "MountPath": path
     "PartitionID": partition id
-
 }
 ```
 
@@ -4211,7 +4183,6 @@ X-Auth-Token: auth_value
 
 ```json
 {
-
     "MountPath": "/opt/mount"
     "PartitionID": "mdisk0p11"
 }
@@ -4279,7 +4250,6 @@ X-Auth-Token: auth_value
 
 ```json
 {
-
     "PartitionID": "partition id"
 }
 ```
@@ -4880,9 +4850,6 @@ PATCH https://10.10.10.10/redfish/v1/AccountService
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: application/json 
 ```
 
@@ -5421,7 +5388,7 @@ Content-Type: application/json
 
 操作类型：**DELETE**
 
-**URL**：**https://**_device\_ip_**/redfish/v1/SessionService/Sessions**/session_\_id_
+**URL**：**https://**_device\_ip_**/redfish/v1/SessionService/Sessions**/<i>session\_id</i>
 
 请求头：
 
@@ -5437,7 +5404,7 @@ X-Auth-Token: auth_value
 
 |参数名|是否必选|参数说明|取值|
 |--|--|--|--|
-|**session_id|必选|待删除的会话ID。|创建会话时的ID。字符串，由小写字母（a\~f）与数字（0~9）组成，长度为48个字符。|
+|session_id|必选|待删除的会话ID。|创建会话时的ID。字符串，由小写字母（a\~f）与数字（0~9）组成，长度为48个字符。|
 
 **使用指南<a name="zh-cn_topic_0000001447121517_zh-cn_topic_0000001129668053_zh-cn_topic_0178823225_section46851500"></a>**
 
@@ -5726,9 +5693,6 @@ X-Auth-Token: auth_value
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -5770,9 +5734,6 @@ PATCH https://10.10.10.10/redfish/v1/Systems
 
 ```http
 X-Auth-Token: auth_value 
-```
-
-```http
 Content-Type: application/json 
 ```
 
@@ -5967,9 +5928,6 @@ Content-Type: application/json
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -6005,9 +5963,6 @@ POST https://10.10.10.10/redfish/v1/Systems/Actions/ComputerSystem.Reset
 
 ```http
 X-Auth-Token: auth_value 
-```
-
-```http
 Content-Type: application/json
 ```
 
@@ -7248,9 +7203,6 @@ X-Auth-Token: auth_value
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: header_type
 ```
 
@@ -7288,9 +7240,6 @@ POST https://10.10.10.10/redfish/v1/Systems/SecurityService/HttpsCert/Actions/Ht
 
 ```http
 X-Auth-Token: auth_value
-```
-
-```http
 Content-Type: application/json
 ```
 
@@ -7432,7 +7381,7 @@ X-Auth-Token: auth_value
 
 |参数|是否必选|参数说明|取值|
 |--|--|--|--|
-|FileName|必选|导入弱字典的文件名。|字符串，长度为1~255，可由大小写字母（a\~z、A\~Z）、数字（0\~9）、其他字符（_.-）组成且不含“..”，后缀必须为“.conf。|
+|FileName|必选|导入弱字典的文件名。|字符串，长度为1~255，可由大小写字母（a\~z、A\~Z）、数字（0\~9）、其他字符（_.-）组成且不含“..”，后缀必须为“.conf”。|
 |Password|必选|用户密码。|字符串，边缘管理系统用户对应的密码。长度为8~20字符。|
 
 **使用指南<a name="zh-cn_topic_0000001447121489_zh-cn_topic_0000001129822427_section48318689"></a>**
@@ -8161,7 +8110,7 @@ X-Auth-Token: auth_value
 
 ## Redfish资源树<a name="ZH-CN_TOPIC_0000001578489872"></a>
 
-Redfish各资源允许的操作如[表1](#Redfish资源树table)所示。
+Redfish各资源允许的操作如[表1 Redfish资源树](#Redfish资源树table)所示。
 
 **表 1**  Redfish资源树<a id="Redfish资源树table"></a>
 
@@ -8178,7 +8127,7 @@ Redfish各资源允许的操作如[表1](#Redfish资源树table)所示。
 |9|/redfish/v1/AccountService|GET/PATCH|
 |10|/redfish/v1/SessionService|GET/PATCH|
 |11|/redfish/v1/SessionService/Sessions|POST|
-|12|/redfish/v1/SessionService/Sessions/<session*_id*>|DELETE|
+|12|/redfish/v1/SessionService/Sessions/<<i>session_id</i>>|DELETE|
 |13|/redfish/v1/UpdateService|GET|
 |14|/redfish/v1/UpdateService/Actions/UpdateService.SimpleUpdate|GET/POST|
 |15|/redfish/v1/UpdateService/Actions/UpdateService.Reset|POST|
@@ -8195,13 +8144,13 @@ Redfish各资源允许的操作如[表1](#Redfish资源树table)所示。
 |26|/redfish/v1/Systems/LTE|GET|
 |27|/redfish/v1/Systems/Memory|GET|
 |28|/redfish/v1/Systems/LTE/StatusInfo|GET/PATCH|
-|29|/redfish/v1**/**Systems/LTE/ConfigInfo|GET/PATCH|
-|30|/redfish/v1**/**Systems/EthernetInterfaces|GET|
-|31|/redfish/v1**/**Systems/EthernetInterfaces/*<eth******_id*>|GET/PATCH|
-|32|/redfish/v1**/**Systems/SimpleStorages|GET|
-|33|/redfish/v1**/**Systems/SimpleStorages/*<storage_id*>|GET|
-|34|/redfish/v1**/**Systems/Partitions|GET/POST|
-|35|/redfish/v1**/**Systems/Partitions/*<partition_id*>|GET/DELETE|
+|29|/redfish/v1/Systems/LTE/ConfigInfo|GET/PATCH|
+|30|/redfish/v1/Systems/EthernetInterfaces|GET|
+|31|/redfish/v1/Systems/EthernetInterfaces/<i><eth_id></i>|GET/PATCH|
+|32|/redfish/v1/Systems/SimpleStorages|GET|
+|33|/redfish/v1/Systems/SimpleStorages/*<storage_id*>|GET|
+|34|/redfish/v1/Systems/Partitions|GET/POST|
+|35|/redfish/v1/Systems/Partitions/*<partition_id*>|GET/DELETE|
 |36|/redfish/v1/Systems/Partitions/Mount|PATCH|
 |37|/redfish/v1/Systems/Partitions/Unmount|PATCH|
 |38|/redfish/v1/Systems/NfsManage|GET|

@@ -8,7 +8,7 @@
 
 **能力项<a name="zh-cn_topic_0000001447161177_section182160324717"></a>**
 
-在以低权限的Nobody用户运行Nginx的过程中，由于需要绑定443端口，因此需要配置Nginx能力；另外在以低权限的HwHiAiUser用户运行discovery进程时，由于需要使用原始套接字进行组播报文发送，因此需要配置discovery能力。详情请参见[表1](#能力配置说明)。
+在以低权限的Nobody用户运行Nginx的过程中，由于需要绑定443端口，因此需要配置Nginx能力；另外在以低权限的HwHiAiUser用户运行discovery进程时，由于需要使用原始套接字进行组播报文发送，因此需要配置discovery能力。详情请参见[表1 能力配置说明](#能力配置说明)。
 
 **表 1**  能力配置说明<a id="能力配置说明"></a>
 
@@ -25,7 +25,7 @@
 **IP相关配置文件<a name="zh-cn_topic_0000001447161121_section174321318217"></a>**
 
 - IPv4地址配置文件：
-    - openEuler：/etc/sysconfig/network-scripts/ifcfg-_xxx_（_xxx_为eth0、eth1）
+    - openEuler：/etc/sysconfig/network-scripts/ifcfg-_xxx_（<i>xxx</i>为eth0、eth1）
     - Ubuntu：/etc/netplan/01-netcfg.yaml
 
 - IPv4用途配置文件：/home/data/ies/tag.ini
