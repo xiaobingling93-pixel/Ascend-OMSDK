@@ -45,8 +45,8 @@ function download_all() {
     download_each "https://github.com/urllib3/urllib3" "https://gitcode.com/gh_mirrors/ur/urllib3" "1.26.19"
     download_each "https://github.com/pallets/click" "https://gitcode.com/gh_mirrors/cl/click" "8.1.3"
     download_each "https://github.com/pallets/jinja" "https://gitcode.com/gh_mirrors/ji/jinja" "3.1.6"
-    download_each "https://github.com/pallets/werkzeug" "https://gitcode.com/gh_mirrors/we/werkzeug" "2.2.3"
-    download_each "https://github.com/pallets/flask" "https://gitcode.com/gh_mirrors/fl/flask" "2.2.5"
+    download_each "https://github.com/pallets/werkzeug" "https://gitcode.com/gh_mirrors/we/werkzeug" "3.1.6"
+    download_each "https://github.com/pallets/flask" "https://gitcode.com/gh_mirrors/fl/flask" "3.1.3"
     download_each "https://github.com/sqlalchemy/sqlalchemy" "https://gitcode.com/gh_mirrors/sq/sqlalchemy" "rel_1_4_22"
     download_each "https://github.com/python-websockets/websockets" "https://gitcode.com/gh_mirrors/we/websockets" "10.3"
     # C/C++ dependencies

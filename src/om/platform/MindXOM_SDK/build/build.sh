@@ -114,6 +114,7 @@ function build_opensource_python()
         "websockets/src/websockets"
         "itsdangerous"
         "markupsafe"
+        "blinker"
     )
 
     mkdir -p "${opensource_dir}"/python
@@ -144,6 +145,7 @@ function build_opensource_python()
     rm -rf werkzeug/src/werkzeug/debug
     rm -rf werkzeug/src/werkzeug/middleware
     cp -arf werkzeug/src/werkzeug "${TOP_DIR}"/output/opensource/python
+    mkdir "${TOP_DIR}"/output/opensource/python/werkzeug.dist-info
 
     rm -f flask/src/flask/debughelpers.py
     rm -f flask/src/flask/__main__.py
@@ -170,6 +172,8 @@ function build_opensource_python()
 
     rm -f markupsafe/_speedups.*.so
     cp -arf markupsafe "${TOP_DIR}"/output/opensource/python
+
+    cp -arf blinker "${TOP_DIR}"/output/opensource/python
     echo "build_opensource_python done."
 
 }
