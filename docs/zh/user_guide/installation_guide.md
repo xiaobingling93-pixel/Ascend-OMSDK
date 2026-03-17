@@ -2,13 +2,11 @@
 
 ## 获取软件包<a name="ZH-CN_TOPIC_0000001633390689"></a>
 
-边缘管理系统软件包需要从Atlas 500 A2 智能小站的Firmware固件包中解压获取。
-
 **表 1**  获取软件包
 
 |软件包名称|说明|获取方式|
 |--|--|--|
-|om-sdk.tar.gz|边缘管理系统软件包。|[获取链接](https://support.huawei.com/enterprise/zh/ascend-computing/atlas-500-a2-pid-254412305/software/261455669?idAbsPath=fixnode01%7C23710424%7C251366513%7C22892968%7C252309141%7C254412305)|
+|Ascend-mindxedge-omsdk_{version}_linux-aarch64.zip|边缘管理系统软件包。|[获取链接](https://gitcode.com/Ascend/OMSDK/releases)|
 
 ## 准备安装环境<a name="ZH-CN_TOPIC_0000001632751317"></a>
 
@@ -55,10 +53,11 @@ OM SDK提供安装脚本，通过install.sh命令安装软件包。
     mkdir om_install
     ```
 
-3. 执行以下命令，解压tar.gz软件包。
+3. 执行以下命令，解压OMSDK软件包。
 
     ```bash
-    tar -zxf om-sdk.tar.gz -C om_install
+    unzip Ascend-mindxedge-omsdk_{version}_linux-aarch64.zip
+    tar -zxf Ascend-mindxedge-omsdk_{version}_linux-aarch64.tar.gz -C om_install
     ```
 
 4. 执行以下命令，为安装脚本添加可执行权限。
