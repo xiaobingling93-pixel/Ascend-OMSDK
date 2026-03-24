@@ -45,9 +45,9 @@ static inline bool ens_rbtree_is_sentinel(ens_rbtree_t *tree, ens_rbtree_node_t 
 static inline void ens_rbtree_init(ens_rbtree_t *tree, ens_rbtree_compare_func_t compare_fn)
 {
     ens_rbtree_set_black(&tree->sentinel);
-    tree->sentinel.left = 0;
-    tree->sentinel.right = 0;
-    tree->sentinel.parent = 0;
+    tree->sentinel.left = NULL;
+    tree->sentinel.right = NULL;
+    tree->sentinel.parent = NULL;
     tree->root = &tree->sentinel;
     tree->compare = compare_fn;
 }
