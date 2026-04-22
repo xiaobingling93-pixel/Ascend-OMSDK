@@ -19,7 +19,15 @@ function download_each() {
     local repo_mirror_url="$2"
     local tag="$3"
 
-    local repo_dir=$(echo "$repo_url" | awk -F'/' '{print $5}')
+    local repo_name="$(basename $repo_url)"
+    if [[ "$tag" == "" ]]; then
+      tag="$(grep $repo_name $TOP_DIR/../../../../requirements.txt | awk -F== '{print $2}')"
+    fi
+    if [[ "$repo_name" == "sqlalchemy" ]]; then
+      tag=rel_`echo $tag | sed 's/\./_/g'`
+    fi
+
+    local repo_dir="$repo_name"
     if [[ "$repo_mirror_url" != "" ]]; then
       repo_url="$repo_mirror_url"
     fi
@@ -42,13 +50,13 @@ function download_all() {
     mkdir -p "$OPENSOURCE_DIR"
     
     # python dependencies
-    download_each "https://github.com/urllib3/urllib3" "https://gitcode.com/gh_mirrors/ur/urllib3" "1.26.19"
-    download_each "https://github.com/pallets/click" "https://gitcode.com/gh_mirrors/cl/click" "8.1.3"
-    download_each "https://github.com/pallets/jinja" "https://gitcode.com/gh_mirrors/ji/jinja" "3.1.6"
-    download_each "https://github.com/pallets/werkzeug" "https://gitcode.com/gh_mirrors/we/werkzeug" "3.1.6"
-    download_each "https://github.com/pallets/flask" "https://gitcode.com/gh_mirrors/fl/flask" "3.1.3"
-    download_each "https://github.com/sqlalchemy/sqlalchemy" "https://gitcode.com/gh_mirrors/sq/sqlalchemy" "rel_1_4_22"
-    download_each "https://github.com/python-websockets/websockets" "https://gitcode.com/gh_mirrors/we/websockets" "10.3"
+    download_each "https://github.com/urllib3/urllib3" "https://gitcode.com/gh_mirrors/ur/urllib3"
+    download_each "https://github.com/pallets/click" "https://gitcode.com/gh_mirrors/cl/click"
+    download_each "https://github.com/pallets/jinja" "https://gitcode.com/gh_mirrors/ji/jinja"
+    download_each "https://github.com/pallets/werkzeug" "https://gitcode.com/gh_mirrors/we/werkzeug"
+    download_each "https://github.com/pallets/flask" "https://gitcode.com/gh_mirrors/fl/flask"
+    download_each "https://github.com/sqlalchemy/sqlalchemy" "https://gitcode.com/gh_mirrors/sq/sqlalchemy"
+    download_each "https://github.com/python-websockets/websockets" "https://gitcode.com/gh_mirrors/we/websockets"
     # C/C++ dependencies
     download_each "https://github.com/PCRE2Project/pcre2" "https://gitcode.com/gh_mirrors/pc/pcre2" "pcre2-10.44"
     download_each "https://github.com/openssl/openssl" "https://gitcode.com/gh_mirrors/ope/openssl" "openssl-3.0.7"

@@ -120,7 +120,12 @@ function build_opensource_python()
     mkdir -p "${opensource_dir}"/python
     cd "${opensource_dir}" || { echo "${opensource_dir} does not exist."; return 3;}
     # flask的依赖使用pip3 install
-    pip3 install -r "${CUR_DIR}"/requirements.txt --no-compile --target="${opensource_dir}"
+    declare -a pip_pkgs=(itsdangerous markupsafe blinker)
+    for pkg in ${pip_pkgs[@]}
+    do
+        local pkg_version="$(grep $pkg "${TOP_DIR}"/../../../../requirements.txt)"
+        pip3 install "$pkg_version" --no-compile --target="${opensource_dir}"
+    done
 
     # 检查当前opensource python是否都已经存在
     for ((j = 0; j < "${#opensource_python[@]}"; j++)); do
